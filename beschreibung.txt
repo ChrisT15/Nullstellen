@@ -1,0 +1,2 @@
+Die Datei poly.html enthaelt ein Formular, in das man die drei Koeffizienten eines quadratischen Polynoms eintragen kann. Wenn man auf "Nullstellen berechnen" klickt,
+dann werden die Nullstellen, welche komplexe Zahlen sind, des eingegeben Polynoms berechnet.

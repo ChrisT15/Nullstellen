@@ -1,0 +1,54 @@
+<html>
+	<head>
+		<title> Nullstellenberechnung</title>
+		<script type="text/javascript" language="JavaScript">
+		<!--
+			function take_sqrt(a_2,a_1,a_0)
+			{
+				a_2=parseFloat(a_2);
+				a_1=parseFloat(a_1);
+				a_0=parseFloat(a_0);
+				if(a_2 !=0)
+				{
+					disc = a_1*a_1-4*a_2*a_0;
+					if(disc >=0)
+					/* wenn die Diskriminante groesser oder gleich Null ist, hat das
+					Polynom zwei reelle Nullstellen */
+					{
+						e1=(-a_1+Math.sqrt(a_1*a_1-4*a_2*a_0))/(2*a_2);
+						e2=(-a_1-Math.sqrt(a_1*a_1-4*a_2*a_0))/(2*a_2);
+						document.formular.ergebnis1.value=e1;
+						document.formular.ergebnis2.value=e2;
+					}
+					else
+					{
+						/*wenn die Dikriminante kleiner als Null ist, hat das Polynom zwei
+						komplexe Nullstellen mit nicht-trivialem Imaginaerteil */
+						disc=-disc;
+						f1=-a_1/(2*a_2);
+						f2=Math.sqrt(disc)/(2*a_2);
+						document.formular.ergebnis1.value=f1 + "+" + f2 +"i";
+						document.formular.ergebnis2.value=f1 + "+" + -f2 +"i";
+					}
+				}
+			}	
+		//-->
+		</script>
+	</head>
+	<body>
+		Eingabe der Koeffizienten: <br />
+		<form name="formular">
+			<input type="text" name="a_2" size="10" /> x^2 +
+			<input type="text" name="a_1" size="10" /> x +
+			<input type="text" name="a_0" size="10" /> 
+			<br />
+			<input type="button" name="OK" value="Nullstellen berechnen" onclick="take_sqrt(document.formular.a_2.value,document.formular.a_1.value,
+			document.formular.a_0.value);"/> 
+			<br /> <br />
+			Nullstellen: <br />
+			<input type="text" name="ergebnis1" size="40" readonly="true" />
+			<input type="text" name="ergebnis2" size="40" readonly="true" />
+			
+		</form>
+	</body>
+</html>
